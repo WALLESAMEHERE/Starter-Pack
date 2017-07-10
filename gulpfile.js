@@ -15,7 +15,7 @@ var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 
 gulp.task('hello', () => {
-  console.log('Hello Bartek');
+  console.log('Hello Łukasz');
 });
 
 gulp.task('browserSync', ['sass', 'scripts', 'html', 'images'], () => {
