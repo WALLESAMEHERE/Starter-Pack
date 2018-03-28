@@ -31,7 +31,7 @@ gulp.task('html', () => {
     .pipe(gulp.dest('dist/'))
 });
 gulp.task('sass', () => {
-  return gulp.src('app/sass/**/*.scss')
+  return gulp.src('app/sass/app.scss')
 	.pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('dist/stylesheets'))
@@ -58,7 +58,7 @@ gulp.task('fonts', () => {
 gulp.task('watch', ['browserSync', 'sass'], () => {
   gulp.watch('app/sass/**/*.scss', ['sass', browserSync.reload]);
   gulp.watch('app/*.html', ['html', browserSync.reload]);
-  gulp.watch('app/javascript/*.js', ['scripts', browserSync.reload]);
+  gulp.watch('app/js/*.js', ['scripts', browserSync.reload]);
   gulp.watch('app/images/*.+(png|jpg|jpeg|gif|svg)', ['images', browserSync.reload]);
 
 });
@@ -71,13 +71,9 @@ gulp.task('useref', () => {
 });
 
 gulp.task('scripts', () => {
-  return gulp.src(['app/javascript/*.js'])
+  return gulp.src(['app/js/*.js',
+                    'node_modules/jquery/dist/jquery.js'])
     .pipe(concat('main.min.js'))
-    .pipe(babili({
-      mangle: {
-        keepClassNames: true
-      }
-    }))
   .on('error', (err) => {
      gutil.log(gutil.colors.red('[Error]'), err.toString());
    })

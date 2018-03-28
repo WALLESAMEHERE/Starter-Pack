@@ -1,3 +1,55 @@
+@import 'fonts';
+@import 'buttons';
+@import 'form';
+@import 'video';
+@import 'playlist';
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+
+}
 body{
-	background-color:silver
-	}
+	background: linear-gradient(silver,whitesmoke);
+}
+
+
+h1 span{
+
+	display: inline-block;
+    transform: skewX(-7deg);
+    margin-left: -26px;
+	text-shadow: none;
+    background: #cc9e9e;
+    color: white;
+    padding:5px 25px;
+    border-radius: 15px;
+    font-family: 'Shadows Into Light', cursive;
+    animation: blinkLogo 2s infinite;
+}
+
+h1{
+	font-size: 2.6em;
+	transform: skewY(-2deg);
+	color:#cee7ff;
+	font-family: 'Rammetto One', cursive;
+	text-shadow: 5px 5px 0px black;
+}
+header{
+	background-color: #424f5e;
+	margin-top: -61px;
+    padding-top: 61px;
+    transform: skewY(2deg);
+}
+.container{
+	transition: 1s;
+	height: 100vh;
+	padding-top:3%;
+	display: grid;
+	text-align:center;
+	background-color:silver;
+}
+
+
+
+/* hover effects */
